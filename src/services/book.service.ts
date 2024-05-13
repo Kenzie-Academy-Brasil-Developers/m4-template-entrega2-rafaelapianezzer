@@ -1,12 +1,12 @@
 import { booksDatabase, generateId } from "../database/database";
-import { IObject, TCreateObjectData, TUpdateBookData  } from "../interfaces/object.interface";
+import { IBook, TCreateObjectData, TUpdateBookData  } from "../interfaces/book.interface";
 
-export class ObjectService {
+export class BookService {
     create(data: TCreateObjectData) {
         const now = new Date();
         
 
-        const newObject: IObject = {
+        const newObject: IBook = {
             id: generateId(),
             ...data,
             createdAt: now,
@@ -46,7 +46,7 @@ export class ObjectService {
 
         const now = new Date();
 
-        const UpdateBook: IObject = { ...currentBook, ...data, updatedAt: now};
+        const UpdateBook: IBook = { ...currentBook, ...data, updatedAt: now};
 
         const index = booksDatabase.findIndex((book) => book.id === id);
 

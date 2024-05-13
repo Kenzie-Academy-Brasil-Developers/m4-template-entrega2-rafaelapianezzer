@@ -1,4 +1,4 @@
-export interface IObject{
+export interface IBook{
     id: number,
     name: string,
     pages: number,
@@ -7,7 +7,7 @@ export interface IObject{
     updatedAt: Date
 }
 
-export type TCreateObjectData = Pick<IObject, "name" | "pages" | "category" | "updatedAt">;
+export type TCreateObjectData = Pick<IBook, "name" | "pages" | "category" | "updatedAt">;
 
 export type TUpdateBookData = Partial<TCreateObjectData>;
 
